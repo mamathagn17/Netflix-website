@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Netflix-style Landing (Demo)</title>
+  <link rel="stylesheet" href="C:\Users\HP\Downloads\style.css" />
+  <!-- small favicon as inline svg -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%23e50914'/%3E%3Ctext x='50%25' y='56%25' font-size='12' font-family='Arial' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">NETFLIX<span class="dot">.</span></div>
+
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">TV Shows</a>
+      <a href="#">Movies</a>
+      <a href="#">Recently Added</a>
+      <a href="#">My List</a>
+    </nav>
+
+    <div class="right">
+      <div class="search">
+        <input type="search" placeholder="Search" aria-label="Search" />
+      </div>
+      <button class="signin">Sign In</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Unlimited movies, TV shows and more.</h1>
+      <p>Watch anywhere. Cancel anytime.</p>
+      <div class="cta-row">
+        <input class="email" type="email" placeholder="Email address" />
+        <button class="cta">Get Started</button>
+      </div>
+    </div>
+    <div class="hero-art">
+      <!-- decorative poster grid -->
+      <div class="poster-grid">
+        <div class="card big">New</div>
+        <div class="card">Action</div>
+        <div class="card">Drama</div>
+        <div class="card">Comedy</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <h2>Popular on Netflix</h2>
+    <div class="row" aria-label="Popular on Netflix">
+      <!-- 10 placeholder posters; replace with img tags if you have images -->
+      <article class="poster">
+        <div class="poster-art">1</div>
+        <h3>Movie Title 1</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">2</div>
+        <h3>Movie Title 2</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">3</div>
+        <h3>Movie Title 3</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">4</div>
+        <h3>Movie Title 4</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">5</div>
+        <h3>Movie Title 5</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">6</div>
+        <h3>Movie Title 6</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">7</div>
+        <h3>Movie Title 7</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">8</div>
+        <h3>Movie Title 8</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">9</div>
+        <h3>Movie Title 9</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">10</div>
+        <h3>Movie Title 10</h3>
+      </article>
+    </div>
+
+    <h2>Trending Now</h2>
+    <div class="row small">
+      <!-- smaller posters -->
+      <article class="poster">
+        <div class="poster-art">A</div>
+        <h3>Title A</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">B</div>
+        <h3>Title B</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">C</div>
+        <h3>Title C</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">D</div>
+        <h3>Title D</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">E</div>
+        <h3>Title E</h3>
+      </article>
+      <article class="poster">
+        <div class="poster-art">F</div>
+        <h3>Title F</h3>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>Questions? <a href="#">Contact us.</a></div>
+    <div class="links">
+      <a href="#">FAQ</a>
+      <a href="#">Help Center</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+    </div>
+    <div class="copyright">© Demo — not affiliated with Netflix</div>
+  </footer>
+
+  <!-- small interactive script for hover preview simulation -->
+  <script>
+    // Hover preview: scale poster on hover and show quick buttons
+    document.querySelectorAll('.poster').forEach(p => {
+      p.addEventListener('mouseenter', () => {
+        p.classList.add('hover');
+      });
+      p.addEventListener('mouseleave', () => {
+        p.classList.remove('hover');
+      });
+    });
+
+    // simple search behavior (no backend)
+    document.querySelector('.search input')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') alert('Search is demo only: ' + e.target.value);
+    });
+
+    // CTA
+    document.querySelector('.cta')?.addEventListener('click', () => {
+      const e = document.querySelector('.email').value.trim();
+      alert(e ? 'Thanks — we would email ' + e : 'Enter an email to get started (demo).');
+    });
+  </script>
+</body>
+</html>
